@@ -12,7 +12,19 @@ const featuredProjects = [
     // live: "https://example.com",
     stars: 128,
     forks: 11,
-  }
+  },
+  {
+    title: "AgroGestion",
+    description: "AgroGestion es una aplicación web para la gestión agrícola desarrollada con Next.js y TypeScript. Provee componentes para autenticación, gestión de gastos y generación de PDFs," +
+      "pensada como base para proyectos de administración de fincas y datos agrícolas.",
+    image: "/AgroGestion.png",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Netlify", "Supabase"],
+    github: "https://github.com/jorgecg646/AgroGestion",
+    live: "https://agrogestionext.netlify.app",
+    stars: 128,
+    forks: 11,
+  },
+
 ]
 
 /**const otherProjects = [
@@ -75,14 +87,13 @@ export function Projects() {
         {featuredProjects.map((project, index) => (
           <ScrollReveal key={project.title} delay={index * 100}>
             <div
-              className={`group grid gap-12 lg:gap-16 ${
-                index % 2 === 1 ? "lg:grid-cols-2 lg:direction-rtl" : "lg:grid-cols-2"
-              } items-center`}
+              className={`group grid gap-12 lg:gap-16 ${index % 2 === 1 ? "lg:grid-cols-2 lg:direction-rtl" : "lg:grid-cols-2"
+                } items-center`}
             >
               {/* Project Image */}
               <div className={`${index % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}>
                 <a
-                  href={"project.live"}
+                  href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block relative overflow-hidden rounded-2xl"
@@ -102,7 +113,7 @@ export function Projects() {
                 <p className="text-primary font-mono text-sm mb-2 tracking-wider">Proyecto Destacado</p>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                   <a
-                    href={""}
+                    href={project.live || project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors"
@@ -114,9 +125,8 @@ export function Projects() {
                   <p className="text-muted-foreground leading-relaxed">{project.description}</p>
                 </div>
                 <ul
-                  className={`flex flex-wrap gap-3 mb-5 font-mono text-sm text-muted-foreground ${
-                    index % 2 === 1 ? "lg:justify-start" : "lg:justify-end"
-                  }`}
+                  className={`flex flex-wrap gap-3 mb-5 font-mono text-sm text-muted-foreground ${index % 2 === 1 ? "lg:justify-start" : "lg:justify-end"
+                    }`}
                 >
                   {project.technologies.map((tech) => (
                     <li key={tech} className="hover:text-primary transition-colors">
@@ -157,8 +167,8 @@ export function Projects() {
           </ScrollReveal>
         ))}
       </div>
-      
-      
+
+
       {/* Other Projects 
       <ScrollReveal>
         <h3 className="text-xl font-bold text-foreground text-center mb-10">Otros proyectos destacados</h3>
@@ -217,5 +227,5 @@ export function Projects() {
         ))}
       </div>*/}
     </section>
-      )
+  )
 }
