@@ -1,0 +1,86 @@
+{
+    "nav": {
+        "about": "Sobre mí",
+        "experience": "Experiencia",
+        "projects": "Proyectos",
+        "education": "Educación",
+        "certificates": "Certificados",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "available": "Disponible para proyectos",
+        "greeting": "Hola, mi nombre es",
+        "viewProjects": "Ver proyectos"
+    },
+    "about": {
+        "title": "Sobre mí",
+        "intro": "¡Hola! Soy Jorge, desarrollador Full Stack apasionado por crear productos que viven en internet. Mi interés por el desarrollo web comenzó en 2019, cuando empecé a experimentar con HTML, CSS, JavaScript y Python, y poco a poco fui incorporando tecnologías de backend como Java, Spring Boot y bases de datos SQL y NoSQL.",
+        "description": "Desarrollador Full Stack especializado en crear soluciones web centradas en el usuario, con formación en Inteligencia Artificial y Big Data, trabajando con",
+        "experienceWith": "Experiencia con",
+        "technologies": "Tecnologías con las que trabajo:",
+        "highlights": {
+            "cleanCode": "Código limpio y mantenible",
+            "uiux": "Diseño centrado en el usuario",
+            "performance": "Optimización y velocidad",
+            "passion": "Apasionado por aprender"
+        }
+    },
+    "experience": {
+        "title": "Experiencia",
+        "kyndryl": {
+            "role": "Frontend Developer",
+            "period": "Marzo 2025 — Junio 2025",
+            "description": [
+                "Desarrollo de un dashboard web para Ka0s, utilizando flujos CI/CD con GitHub Actions para generar la estructura HTML, CSS y JavaScript.",
+                "Integración de la información del sistema mediante archivos JSON, asegurando una carga de datos consistente y mantenible.",
+                "Despliegue continuo del dashboard en el servidor web, mejorando la rapidez y fiabilidad en la entrega de nuevas versiones."
+            ]
+        }
+    },
+    "projects": {
+        "title": "Proyectos",
+        "featured": "Proyecto Destacado",
+        "prohogar": {
+            "description": "Aplicación movil para la contratación de servicios del hogar, que permite a los usuarios buscar, comparar y solicitar profesionales de forma sencilla y centralizada."
+        },
+        "agrogestion": {
+            "description": "AgroGestion es una aplicación web para la gestión agrícola desarrollada con Next.js y TypeScript. Provee componentes para autenticación, gestión de gastos y generación de PDFs, pensada como base para proyectos de administración de fincas y datos agrícolas."
+        }
+    },
+    "education": {
+        "title": "Educación",
+        "dam": {
+            "degree": "Grado Superior en Desarrollo de Aplicaciones Multiplataforma",
+            "description": "Formación integral en fundamentos de computación, algoritmos, bases de datos y desarrollo de software.",
+            "achievements": [
+                "Media: 9.6/10",
+                "Proyecto Final: ProHogar — Nota: 10/10"
+            ]
+        },
+        "ia": {
+            "degree": "Curso de Especialización en Inteligencia Artificial y Big Data",
+            "description": "Optimizar el desarrollo de procesos autónomos empleando herramientas de Inteligencia Artificial y Big Data."
+        }
+    },
+    "certificates": {
+        "title": "Certificaciones",
+        "verified": "Verificado",
+        "viewCredential": "Ver credencial"
+    },
+    "contact": {
+        "title": "Contacto",
+        "heading": "¿Tienes un proyecto en mente?",
+        "description": "Estoy siempre abierto a nuevas oportunidades, colaboraciones interesantes o simplemente una buena conversación sobre tecnología.",
+        "writeTo": "Escríbeme a",
+        "sendEmail": "Enviar email",
+        "availableFreelance": "Disponible para proyectos freelance"
+    },
+    "footer": {
+        "quickLinks": "Enlaces rápidos",
+        "contact": "Contacto",
+        "available": "Disponible para proyectos",
+        "description": "Desarrollador de software apasionado por crear experiencias digitales excepcionales.",
+        "designedBy": "Diseñado y construido por Jorge Castillo",
+        "rights": "Todos los derechos reservados."
+    }
+}

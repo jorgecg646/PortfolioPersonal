@@ -3,6 +3,7 @@
 import { Award, ExternalLink, Calendar, CheckCircle2 } from "lucide-react"
 import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { useState } from "react"
+import { useLanguage } from "@/components/language-context"
 
 const certificates = [
   {
@@ -53,6 +54,7 @@ const certificates = [
 ]
 
 export function Certificates() {
+  const { t } = useLanguage()
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
@@ -61,7 +63,7 @@ export function Certificates() {
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-2xl font-bold text-foreground md:text-3xl whitespace-nowrap">
             <span className="text-primary font-mono text-xl md:text-2xl mr-2">05.</span>
-            Certificaciones
+            {t.certificates.title}
           </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-border via-primary/30 to-transparent" />
         </div>
@@ -97,7 +99,7 @@ export function Certificates() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                      aria-label="Ver credencial"
+                      aria-label={t.certificates.viewCredential}
                     >
                       <ExternalLink className="h-4 w-4" />
                     </a>
@@ -118,7 +120,7 @@ export function Certificates() {
                     </span>
                     <span className="flex items-center gap-1.5">
                       <CheckCircle2 className="h-3.5 w-3.5 text-green-500" />
-                      Verificado
+                      {t.certificates.verified}
                     </span>
                   </div>
 

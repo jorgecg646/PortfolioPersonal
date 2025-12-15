@@ -3,23 +3,21 @@
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { ScrollReveal } from "@/components/animations/scroll-reveal"
-
-const experiences = [
-  {
-    company: "Kyndyrl",
-    role: "Frontend Developer",
-    period: "Marzo 2025 — Junio 2025",
-    description: [
-      "Desarrollo de un dashboard web para Ka0s, utilizando flujos CI/CD con GitHub Actions para generar la estructura HTML, CSS y JavaScript.",
-      "Integración de la información del sistema mediante archivos JSON, asegurando una carga de datos consistente y mantenible.",
-      "Despliegue continuo del dashboard en el servidor web, mejorando la rapidez y fiabilidad en la entrega de nuevas versiones.",
-    ],
-    technologies: ["Python", "HTML", "JavaScript", "Taylwind CSS", "JSON", "GitHub Actions (CI/CD)"],
-  },
-]
+import { useLanguage } from "@/components/language-context"
 
 export function Experience() {
+  const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState(0)
+
+  const experiences = [
+    {
+      company: "Kyndryl",
+      role: t.experience.kyndryl.role,
+      period: t.experience.kyndryl.period,
+      description: t.experience.kyndryl.description,
+      technologies: ["Python", "HTML", "JavaScript", "Tailwind CSS", "JSON", "GitHub Actions (CI/CD)"],
+    },
+  ]
 
   return (
     <section id="experience" className="py-24 md:py-32">
@@ -27,7 +25,7 @@ export function Experience() {
         <div className="flex items-center gap-4 mb-10">
           <h2 className="text-2xl font-bold text-foreground md:text-3xl whitespace-nowrap">
             <span className="text-primary font-mono text-xl md:text-2xl mr-2">02.</span>
-            Experiencia
+            {t.experience.title}
           </h2>
           <div className="h-px flex-1 bg-border" />
         </div>

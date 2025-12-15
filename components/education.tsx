@@ -1,35 +1,38 @@
+"use client"
+
 import { GraduationCap, Calendar, MapPin } from "lucide-react"
 import { ScrollReveal } from "@/components/animations/scroll-reveal"
-
-const education = [
-  {
-    degree: "Grado Superior en Desarrollo de Aplicaciones Multiplataforma",
-    institution: "IES PADRE SUAREZ",
-    location: "Granada, España",
-    period: "2023 — 2025",
-    description:
-      "Formación integral en fundamentos de computación, algoritmos, bases de datos y desarrollo de software.",
-    achievements: ["Media: 9.6/10", "Proyecto Final: ProHogar — Nota: 10/10"],
-  },
-  {
-    degree: "Curso de Especialización en Inteligencia Artificial y Big Data",
-    institution: "IES PUNTA DEL VERDE",
-    location: "Sevilla, España",
-    period: "2025 — 2026",
-    description:
-      "Optimizar el desarrollo de procesos autónomos empleando herramientas de Inteligencia Artificial y Big Data.",
-    achievements: [],
-  },
-]
+import { useLanguage } from "@/components/language-context"
 
 export function Education() {
+  const { t } = useLanguage()
+
+  const education = [
+    {
+      degree: t.education.dam.degree,
+      institution: "IES PADRE SUAREZ",
+      location: "Granada, España",
+      period: "2023 — 2025",
+      description: t.education.dam.description,
+      achievements: t.education.dam.achievements,
+    },
+    {
+      degree: t.education.ia.degree,
+      institution: "IES PUNTA DEL VERDE",
+      location: "Sevilla, España",
+      period: "2025 — 2026",
+      description: t.education.ia.description,
+      achievements: [],
+    },
+  ]
+
   return (
     <section id="education" className="py-24 md:py-32">
       <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-2xl font-bold text-foreground md:text-3xl whitespace-nowrap">
             <span className="text-primary font-mono text-xl md:text-2xl mr-2">04.</span>
-            Educación
+            {t.education.title}
           </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-border via-primary/30 to-transparent" />
         </div>

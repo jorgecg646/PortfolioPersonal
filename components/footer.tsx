@@ -1,4 +1,7 @@
+"use client"
+
 import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react"
+import { useLanguage } from "@/components/language-context"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/jorgecg646", label: "GitHub" },
@@ -6,16 +9,18 @@ const socialLinks = [
   { icon: Mail, href: "mailto:jorgecg519@gmail.com", label: "Email" },
 ]
 
-const quickLinks = [
-  { name: "Sobre mí", href: "#about" },
-  { name: "Experiencia", href: "#experience" },
-  { name: "Proyectos", href: "#projects" },
-  { name: "Educación", href: "#education" },
-  { name: "Certificados", href: "#certificates" },
-  { name: "Contacto", href: "#contact" },
-]
-
 export function Footer() {
+  const { t } = useLanguage()
+
+  const quickLinks = [
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.experience, href: "#experience" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.education, href: "#education" },
+    { name: t.nav.certificates, href: "#certificates" },
+    { name: t.nav.contact, href: "#contact" },
+  ]
+
   return (
     <footer className="relative border-t border-border/50 bg-card/30 backdrop-blur-sm">
       {/* Back to top button */}
@@ -37,7 +42,7 @@ export function Footer() {
               {"<Dev />"}
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Desarrollador de software apasionado por crear experiencias digitales excepcionales.
+              {t.footer.description}
             </p>
             <div className="flex items-center gap-3">
               {socialLinks.map((link) => (
@@ -57,7 +62,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-bold text-foreground">Enlaces rápidos</h4>
+            <h4 className="font-bold text-foreground">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -71,7 +76,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="font-bold text-foreground">Contacto</h4>
+            <h4 className="font-bold text-foreground">{t.footer.contact}</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>jorgecg519@gmail.com</p>
               <p>Sevilla, España</p>
@@ -80,7 +85,7 @@ export function Footer() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
                 </span>
-                <span className="text-green-500 text-xs">Disponible para proyectos</span>
+                <span className="text-green-500 text-xs">{t.footer.available}</span>
               </div>
             </div>
           </div>
@@ -89,9 +94,9 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground font-mono flex items-center gap-1">
-            Diseñado y construido por Jorge Castillo
+            {t.footer.designedBy}
           </p>
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Todos los derechos reservados.</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} {t.footer.rights}</p>
         </div>
       </div>
     </footer>

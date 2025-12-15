@@ -1,82 +1,42 @@
+"use client"
+
 import { ExternalLink, Github, Folder, Star, GitFork, ArrowUpRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/animations/ui-simple"
 import { ScrollReveal } from "@/components/animations/scroll-reveal"
-
-const featuredProjects = [
-  {
-    title: "ProHogar APP",
-    description: "Aplicación movil para la contratación de servicios del hogar, que permite a los usuarios buscar, comparar y solicitar profesionales de forma sencilla y centralizada.",
-    image: "/ProHogar.png",
-    technologies: ["Unity", "Android", "Firebase", "IOS", "C#"],
-    github: "https://github.com/jorgecg646/ProHogar",
-    // live: "https://example.com",
-    stars: 128,
-    forks: 11,
-  },
-  {
-    title: "AgroGestion",
-    description: "AgroGestion es una aplicación web para la gestión agrícola desarrollada con Next.js y TypeScript. Provee componentes para autenticación, gestión de gastos y generación de PDFs," +
-      "pensada como base para proyectos de administración de fincas y datos agrícolas.",
-    image: "/AgroGestion.png",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Netlify", "Supabase"],
-    github: "https://github.com/jorgecg646/AgroGestion",
-    live: "https://agrogestionext.netlify.app",
-    stars: 128,
-    forks: 11,
-  },
-
-]
-
-/**const otherProjects = [
-  {
-    title: "CLI Tool",
-    description: "Herramienta de línea de comandos para automatizar tareas de desarrollo.",
-    technologies: ["Node.js", "Commander", "Chalk"],
-    github: "https://github.com",
-  },
-  {
-    title: "VS Code Extension",
-    description: "Extensión para VS Code que mejora la productividad con snippets personalizados.",
-    technologies: ["TypeScript", "VS Code API"],
-    github: "https://github.com",
-  },
-  {
-    title: "Portfolio v1",
-    description: "Primera versión de mi portfolio personal construido con Gatsby.",
-    technologies: ["Gatsby", "GraphQL", "Styled Components"],
-    github: "https://github.com",
-    live: "https://example.com",
-  },
-  {
-    title: "Weather App",
-    description: "Aplicación del clima con geolocalización y pronóstico de 7 días.",
-    technologies: ["React", "OpenWeather API", "Chart.js"],
-    github: "https://github.com",
-    live: "https://example.com",
-  },
-  {
-    title: "Markdown Editor",
-    description: "Editor de markdown en tiempo real con preview y exportación a PDF.",
-    technologies: ["React", "Remark", "jsPDF"],
-    github: "https://github.com",
-  },
-  {
-    title: "URL Shortener",
-    description: "Acortador de URLs con analytics y códigos QR personalizados.",
-    technologies: ["Next.js", "MongoDB", "Redis"],
-    github: "https://github.com",
-    live: "https://example.com",
-  },
-]**/
+import { useLanguage } from "@/components/language-context"
 
 export function Projects() {
+  const { t } = useLanguage()
+
+  const featuredProjects = [
+    {
+      title: "ProHogar APP",
+      description: t.projects.prohogar.description,
+      image: "/ProHogar.png",
+      technologies: ["Unity", "Android", "Firebase", "IOS", "C#"],
+      github: "https://github.com/jorgecg646/ProHogar",
+      stars: 128,
+      forks: 11,
+    },
+    {
+      title: "AgroGestion",
+      description: t.projects.agrogestion.description,
+      image: "/AgroGestion.png",
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Netlify", "Supabase"],
+      github: "https://github.com/jorgecg646/AgroGestion",
+      live: "https://agrogestionext.netlify.app",
+      stars: 128,
+      forks: 11,
+    },
+  ]
+
   return (
     <section id="projects" className="py-24 md:py-32">
       <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-2xl font-bold text-foreground md:text-3xl whitespace-nowrap">
             <span className="text-primary font-mono text-xl md:text-2xl mr-2">03.</span>
-            Proyectos
+            {t.projects.title}
           </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-border via-primary/30 to-transparent" />
         </div>
@@ -110,7 +70,7 @@ export function Projects() {
 
               {/* Project Info */}
               <div className={`${index % 2 === 1 ? "lg:order-1 lg:text-left" : "lg:order-2 lg:text-right"}`}>
-                <p className="text-primary font-mono text-sm mb-2 tracking-wider">Proyecto Destacado</p>
+                <p className="text-primary font-mono text-sm mb-2 tracking-wider">{t.projects.featured}</p>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                   <a
                     href={project.live || project.github}
@@ -152,80 +112,12 @@ export function Projects() {
                   >
                     <Github className="h-5 w-5" />
                   </a>
-                  {/*<a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg text-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                    aria-label="Live Demo"
-                  >
-                    <ExternalLink className="h-5 w-5" />
-                  </a>*/}
                 </div>
               </div>
             </div>
           </ScrollReveal>
         ))}
       </div>
-
-
-      {/* Other Projects 
-      <ScrollReveal>
-        <h3 className="text-xl font-bold text-foreground text-center mb-10">Otros proyectos destacados</h3>
-      </ScrollReveal>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {otherProjects.map((project, index) => (
-          <ScrollReveal key={project.title} delay={index * 75}>
-            <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all hover:-translate-y-2 group overflow-hidden">
-              <div className="h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-              <CardHeader>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                    <Folder className="h-7 w-7" />
-                  </div>
-                  <div className="flex gap-2">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                      aria-label="GitHub Repository"
-                    >
-                      <Github className="h-5 w-5" />
-                    </a>
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                        aria-label="Live Demo"
-                      >
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <CardTitle className="text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="flex flex-wrap gap-2 font-mono text-xs text-muted-foreground">
-                  {project.technologies.map((tech) => (
-                    <li key={tech} className="px-2 py-1 rounded-md bg-secondary/30">
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </ScrollReveal>
-        ))}
-      </div>*/}
     </section>
   )
 }

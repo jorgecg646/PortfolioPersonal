@@ -1,15 +1,20 @@
+"use client"
+
 import { Button } from "@/components/animations/ui-simple"
 import { Mail, Github, Linkedin, Send } from "lucide-react"
 import { ScrollReveal } from "@/components/animations/scroll-reveal"
+import { useLanguage } from "@/components/language-context"
 
 export function Contact() {
+  const { t } = useLanguage()
+
   return (
     <section id="contact" className="py-24 md:py-32">
       <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-2xl font-bold text-foreground md:text-3xl whitespace-nowrap">
             <span className="text-primary font-mono text-xl md:text-2xl mr-2">06.</span>
-            Contacto
+            {t.contact.title}
           </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-border via-primary/30 to-transparent" />
         </div>
@@ -21,11 +26,10 @@ export function Contact() {
           <ScrollReveal delay={100}>
             <div className="space-y-6">
               <h3 className="text-3xl md:text-4xl font-bold text-foreground text-balance">
-                ¿Tienes un proyecto en mente?
+                {t.contact.heading}
               </h3>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Estoy siempre abierto a nuevas oportunidades, colaboraciones interesantes o simplemente una buena
-                conversación sobre tecnología.
+                {t.contact.description}
               </p>
 
               {/* Social links with icons */}
@@ -64,7 +68,7 @@ export function Contact() {
                     <Mail className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Escríbeme a</p>
+                    <p className="text-sm text-muted-foreground">{t.contact.writeTo}</p>
                     <p className="text-lg font-bold text-foreground">Email</p>
                   </div>
                 </div>
@@ -75,7 +79,7 @@ export function Contact() {
                   <Button asChild className="flex-1 gap-2 group/btn">
                     <a href="mailto:jorgecg519@gmail.com">
                       <Send className="h-4 w-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                      Enviar email
+                      {t.contact.sendEmail}
                     </a>
                   </Button>
                 </div>
@@ -87,7 +91,7 @@ export function Contact() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
                     </span>
-                    Disponible para proyectos freelance
+                    {t.contact.availableFreelance}
                   </div>
                 </div>
               </div>

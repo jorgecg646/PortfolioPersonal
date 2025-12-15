@@ -1,0 +1,86 @@
+{
+    "nav": {
+        "about": "About",
+        "experience": "Experience",
+        "projects": "Projects",
+        "education": "Education",
+        "certificates": "Certificates",
+        "contact": "Contact"
+    },
+    "hero": {
+        "available": "Available for projects",
+        "greeting": "Hi, my name is",
+        "viewProjects": "View projects"
+    },
+    "about": {
+        "title": "About me",
+        "intro": "Hello! I'm Jorge, a Full Stack developer passionate about creating products that live on the internet. My interest in web development started in 2019, when I began experimenting with HTML, CSS, JavaScript and Python, and gradually incorporated backend technologies like Java, Spring Boot and SQL and NoSQL databases.",
+        "description": "Full Stack Developer specialized in creating user-centered web solutions, with training in Artificial Intelligence and Big Data, working with",
+        "experienceWith": "Experience with",
+        "technologies": "Technologies I work with:",
+        "highlights": {
+            "cleanCode": "Clean and maintainable code",
+            "uiux": "User-centered design",
+            "performance": "Optimization and speed",
+            "passion": "Passionate about learning"
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "kyndryl": {
+            "role": "Frontend Developer",
+            "period": "March 2025 — June 2025",
+            "description": [
+                "Development of a web dashboard for Ka0s, using CI/CD workflows with GitHub Actions to generate the HTML, CSS and JavaScript structure.",
+                "Integration of system information through JSON files, ensuring consistent and maintainable data loading.",
+                "Continuous deployment of the dashboard to the web server, improving speed and reliability in delivering new versions."
+            ]
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "featured": "Featured Project",
+        "prohogar": {
+            "description": "Mobile application for hiring home services, allowing users to search, compare and request professionals in a simple and centralized way."
+        },
+        "agrogestion": {
+            "description": "AgroGestion is a web application for agricultural management developed with Next.js and TypeScript. It provides components for authentication, expense management and PDF generation, designed as a base for farm administration and agricultural data projects."
+        }
+    },
+    "education": {
+        "title": "Education",
+        "dam": {
+            "degree": "Higher Degree in Multiplatform Application Development",
+            "description": "Comprehensive training in computing fundamentals, algorithms, databases and software development.",
+            "achievements": [
+                "Average: 9.6/10",
+                "Final Project: ProHogar — Grade: 10/10"
+            ]
+        },
+        "ia": {
+            "degree": "Specialization Course in Artificial Intelligence and Big Data",
+            "description": "Optimize the development of autonomous processes using Artificial Intelligence and Big Data tools."
+        }
+    },
+    "certificates": {
+        "title": "Certifications",
+        "verified": "Verified",
+        "viewCredential": "View credential"
+    },
+    "contact": {
+        "title": "Contact",
+        "heading": "Have a project in mind?",
+        "description": "I'm always open to new opportunities, interesting collaborations or simply a good conversation about technology.",
+        "writeTo": "Write to me at",
+        "sendEmail": "Send email",
+        "availableFreelance": "Available for freelance projects"
+    },
+    "footer": {
+        "quickLinks": "Quick Links",
+        "contact": "Contact",
+        "available": "Available for projects",
+        "description": "Software developer passionate about creating exceptional digital experiences.",
+        "designedBy": "Designed and built by Jorge Castillo",
+        "rights": "All rights reserved."
+    }
+}

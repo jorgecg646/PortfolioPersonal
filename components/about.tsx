@@ -7,6 +7,7 @@ import { Code2, Palette, Zap, Coffee, ArrowDown, Github, Mail, Linkedin, Downloa
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import type React from "react"
+import { useLanguage } from "@/components/language-context"
 
 // AnimatedCode Component
 const codeSnippets = [
@@ -177,15 +178,16 @@ const skills = [
   "GitHub Actions (CI/CD)",
 ]
 
-
-const highlights = [
-  { icon: Code2, label: "Clean Code", description: "Código limpio y mantenible" },
-  { icon: Palette, label: "UI/UX", description: "Diseño centrado en el usuario" },
-  { icon: Zap, label: "Performance", description: "Optimización y velocidad" },
-  { icon: Coffee, label: "Passion", description: "Apasionado por aprender" },
-]
-
 export function About() {
+  const { t } = useLanguage()
+
+  const highlights = [
+    { icon: Code2, label: "Clean Code", description: t.about.highlights.cleanCode },
+    { icon: Palette, label: "UI/UX", description: t.about.highlights.uiux },
+    { icon: Zap, label: "Performance", description: t.about.highlights.performance },
+    { icon: Coffee, label: "Passion", description: t.about.highlights.passion },
+  ]
+
   return (
     <>
       {/* Hero Section */}
@@ -199,12 +201,12 @@ export function About() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
                 </span>
-                Disponible para proyectos
+                {t.hero.available}
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <p className="text-primary font-mono text-sm md:text-base tracking-wider">Hola, mi nombre es</p>
+              <p className="text-primary font-mono text-sm md:text-base tracking-wider">{t.hero.greeting}</p>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
@@ -215,14 +217,13 @@ export function About() {
 
             <ScrollReveal delay={300}>
               <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl text-balance bg-gradient-to-r from-muted-foreground via-foreground to-muted-foreground bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
-                
+
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
               <p className="max-w-xl text-muted-foreground leading-relaxed text-base md:text-lg">
-                Desarrollador Full Stack especializado en crear soluciones web centradas en el usuario,
-                con formación en Inteligencia Artificial y Big Data, trabajando con{" "}
+                {t.about.description}{" "}
                 <span className="text-primary font-medium hover:underline cursor-pointer">React</span>,{" "}
                 <span className="text-primary font-medium hover:underline cursor-pointer">Next.js</span>,{" "}
                 <span className="text-primary font-medium hover:underline cursor-pointer">Javascript</span>,{" "}
@@ -230,7 +231,7 @@ export function About() {
                 <span className="text-primary font-medium hover:underline cursor-pointer">Java / Spring Boot</span>.
               </p>
               <p className="max-w-xl text-muted-foreground leading-relaxed text-sm md:text-base mt-2">
-                Experiencia con{" "}
+                {t.about.experienceWith}{" "}
                 <span className="text-primary font-medium">SQL</span>,{" "}
                 <span className="text-primary font-medium">MongoDB</span>,{" "}
                 <span className="text-primary font-medium">Firebase</span>,{" "}
@@ -259,7 +260,7 @@ export function About() {
                   <Button asChild size="lg" className="font-mono gap-2 group relative overflow-hidden">
                     <a href="#experience">
                       <span className="relative z-10 flex items-center gap-2">
-                        Ver proyectos
+                        {t.hero.viewProjects}
                         <ArrowDown className="h-4 w-4 group-hover:translate-y-1 transition-transform" />
                       </span>
                     </a>
@@ -316,7 +317,7 @@ export function About() {
           <div className="flex items-center gap-4 mb-12">
             <h2 className="text-2xl font-bold text-foreground md:text-3xl whitespace-nowrap">
               <span className="text-primary font-mono text-xl md:text-2xl mr-2">01.</span>
-              Sobre mí
+              {t.about.title}
             </h2>
             <div className="h-px flex-1 bg-gradient-to-r from-border via-primary/30 to-transparent" />
           </div>
@@ -326,12 +327,10 @@ export function About() {
           <div className="space-y-6 lg:col-span-3">
             <ScrollReveal delay={100}>
               <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                ¡Hola! Soy Jorge, desarrollador Full Stack apasionado por crear productos que viven en internet.
-                Mi interés por el desarrollo web comenzó en 2019, cuando empecé a experimentar con HTML, CSS, JavaScript y Python,
-                y poco a poco fui incorporando tecnologías de backend como Java, Spring Boot y bases de datos SQL y NoSQL.
+                {t.about.intro}
               </p>
             </ScrollReveal>
-            
+
 
             {/* Highlights grid */}
             <ScrollReveal delay={300}>
@@ -350,7 +349,7 @@ export function About() {
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
-              <p className="text-muted-foreground leading-relaxed pt-2">Tecnologías con las que trabajo:</p>
+              <p className="text-muted-foreground leading-relaxed pt-2">{t.about.technologies}</p>
             </ScrollReveal>
             <ScrollReveal delay={500}>
               <ul className="flex flex-wrap gap-2">
